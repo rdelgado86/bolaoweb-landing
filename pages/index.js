@@ -1,62 +1,75 @@
 import React from "react";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="bg-gray-900 text-white min-h-screen font-sans">
-      <header className="flex items-center justify-between px-6 py-4 border-b border-gray-700">
-        <div className="flex items-center space-x-3">
-          <img src="/logo.png" alt="BOLÃOWEB Logo" className="h-10" />
-          <span className="text-yellow-400 text-2xl font-bold">BOLAOWEB</span>
+    <main className="bg-gray-950 text-white font-sans">
+      {/* Header */}
+      <header className="fixed w-full top-0 left-0 bg-gray-900 border-b border-gray-800 z-50">
+        <div className="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
+          <div className="flex items-center gap-3">
+            <Image src="/logo.png" alt="BOLAOWEB Logo" width={40} height={40} />
+            <h1 className="text-yellow-400 text-2xl font-bold tracking-wide">BOLAOWEB</h1>
+          </div>
+          <nav className="hidden md:flex gap-6 text-gray-300 text-sm">
+            <a href="#como-funciona" className="hover:text-yellow-300">Como Funciona</a>
+            <a href="#campeonatos" className="hover:text-yellow-300">Campeonatos</a>
+            <a href="#comece" className="hover:text-yellow-300">Comece Agora</a>
+          </nav>
         </div>
-        <nav className="space-x-6 hidden md:flex">
-          <a href="#como-funciona" className="hover:text-yellow-300">Como Funciona</a>
-          <a href="#campeonatos" className="hover:text-yellow-300">Campeonatos</a>
-          <a href="#login" className="hover:text-yellow-300">Login</a>
-        </nav>
       </header>
 
-      <section className="px-6 py-20 text-center bg-gray-800">
-        <h1 className="text-4xl md:text-5xl font-bold mb-6">Seu bolão online dos campeonatos que você ama</h1>
-        <p className="text-lg mb-8 text-gray-300">Crie bolões, desafie amigos e acompanhe os palpites em tempo real</p>
-        <a href="#criar" className="bg-yellow-400 text-gray-900 font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition">Criar meu bolão</a>
+      {/* Hero */}
+      <section className="pt-32 pb-20 px-6 text-center bg-gradient-to-b from-gray-900 to-gray-950">
+        <h2 className="text-4xl md:text-6xl font-bold mb-6">Desafie seus amigos no<br className="hidden md:inline" /> melhor bolão da internet</h2>
+        <p className="text-lg text-gray-400 mb-8">Crie bolões para qualquer campeonato, compartilhe com amigos e acompanhe o ranking em tempo real.</p>
+        <a href="#comece" className="inline-block bg-yellow-400 text-gray-900 font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition">Criar meu bolão</a>
       </section>
 
-      <section id="como-funciona" className="px-6 py-20 max-w-4xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-12">Como Funciona</h2>
-        <div className="grid md:grid-cols-3 gap-10">
-          <div>
-            <h3 className="text-xl font-semibold mb-2">1. Crie seu bolão</h3>
-            <p className="text-gray-300">Cadastre-se e crie um bolão para o campeonato que desejar.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-2">2. Convide os amigos</h3>
-            <p className="text-gray-300">Compartilhe o link e junte a galera para palpitar.</p>
-          </div>
-          <div>
-            <h3 className="text-xl font-semibold mb-2">3. Acompanhe o ranking</h3>
-            <p className="text-gray-300">Veja quem mandou bem a cada rodada e fique no topo!</p>
+      {/* Como Funciona */}
+      <section id="como-funciona" className="px-6 py-24 bg-gray-900">
+        <div className="max-w-6xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-14">Como Funciona</h3>
+          <div className="grid md:grid-cols-3 gap-10 text-left">
+            <div>
+              <h4 className="text-xl font-semibold text-yellow-400 mb-2">1. Crie seu bolão</h4>
+              <p className="text-gray-300">Escolha um campeonato, defina as regras e gere seu link.</p>
+            </div>
+            <div>
+              <h4 className="text-xl font-semibold text-yellow-400 mb-2">2. Convide os amigos</h4>
+              <p className="text-gray-300">Compartilhe o link e monte sua liga de palpites personalizada.</p>
+            </div>
+            <div>
+              <h4 className="text-xl font-semibold text-yellow-400 mb-2">3. Dispute ponto a ponto</h4>
+              <p className="text-gray-300">Acompanhe os jogos e veja quem lidera o ranking a cada rodada.</p>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="campeonatos" className="px-6 py-20 bg-gray-800">
-        <h2 className="text-3xl font-bold text-center mb-12">Campeonatos Populares</h2>
-        <ul className="flex flex-wrap justify-center gap-8 text-lg text-yellow-400 font-semibold">
-          <li>Brasileirão</li>
-          <li>Libertadores</li>
-          <li>Champions League</li>
-          <li>Copa do Mundo</li>
-          <li>Estaduais</li>
-        </ul>
+      {/* Campeonatos */}
+      <section id="campeonatos" className="px-6 py-24 bg-gray-950">
+        <div className="max-w-5xl mx-auto text-center">
+          <h3 className="text-3xl font-bold mb-12">Campeonatos em Destaque</h3>
+          <div className="flex flex-wrap justify-center gap-6 text-yellow-400 text-lg font-semibold">
+            <span>🇧🇷 Brasileirão</span>
+            <span>🏆 Libertadores</span>
+            <span>⚽ Champions League</span>
+            <span>🌎 Copa do Mundo</span>
+            <span>🏅 Estaduais</span>
+          </div>
+        </div>
       </section>
 
-      <section className="px-6 py-20 text-center">
-        <h2 className="text-3xl font-bold mb-4">Pronto para entrar em campo?</h2>
-        <p className="text-gray-300 mb-8">Crie seu bolão agora e convide seus amigos para participar.</p>
-        <a href="#criar" className="bg-yellow-400 text-gray-900 font-bold py-3 px-6 rounded-full hover:bg-yellow-300 transition">Começar agora</a>
+      {/* Call to Action */}
+      <section id="comece" className="px-6 py-24 bg-gradient-to-br from-yellow-400 to-yellow-300 text-gray-900 text-center">
+        <h3 className="text-3xl font-bold mb-4">Preparado para começar?</h3>
+        <p className="text-lg mb-6">Monte agora o seu bolão e chame a galera para palpitar!</p>
+        <a href="#" className="inline-block bg-gray-900 text-yellow-300 font-bold py-3 px-6 rounded-full hover:bg-gray-800 transition">Criar bolão agora</a>
       </section>
 
-      <footer className="px-6 py-10 bg-gray-950 text-center text-sm text-gray-500">
+      {/* Footer */}
+      <footer className="px-6 py-10 bg-black text-center text-sm text-gray-500">
         © {new Date().getFullYear()} BOLAOWEB.COM.BR • Todos os direitos reservados
       </footer>
     </main>
